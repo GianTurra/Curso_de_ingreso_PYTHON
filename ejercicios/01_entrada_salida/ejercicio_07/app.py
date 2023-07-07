@@ -50,16 +50,42 @@ class App(customtkinter.CTk):
         self.btn_dividir.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_sumar_on_click(self):
-        pass
+        operador_a_tex = self.txt_operador_a.get()
+        operador_b_tex = self.txt_operador_b.get()
+        operador_a_num = int (operador_a_tex)
+        operador_b_num = int (operador_b_tex) 
+        resultado = operador_a_num + operador_b_num 
+        mensaje = "El resultado de la suma es: {0}".format(resultado)
+        alert("Ejercicio 7", mensaje)
 
     def btn_restar_on_click(self):
-        pass
+        operador_a_tex = self.txt_operador_a.get()
+        operador_b_tex = self.txt_operador_b.get()
+        operador_a_num = int (operador_a_tex)
+        operador_b_num = int (operador_b_tex) 
+        resultado = operador_a_num - operador_b_num 
+        mensaje = "El resultado de la resta es: {0}".format(resultado)
+        alert("Ejercicio 7", mensaje)
 
     def btn_multiplicar_on_click(self):
-        pass
+        operador_a_tex = self.txt_operador_a.get()
+        operador_b_tex = self.txt_operador_b.get()
+        operador_a_num = int (operador_a_tex)
+        operador_b_num = int (operador_b_tex) 
+        resultado = operador_a_num * operador_b_num 
+        mensaje = "El resultado de la multiplicacion es: {0}".format(resultado)
+        alert("Ejercicio 7", mensaje)
 
     def btn_dividir_on_click(self):
-        pass
+        operador_a_tex = self.txt_operador_a.get()
+        operador_b_tex = self.txt_operador_b.get()
+        operador_a_num = int (operador_a_tex)
+        operador_b_num = int (operador_b_tex) 
+        resultado = operador_a_num / operador_b_num 
+        mensaje = "El resultado de la division es: {0}".format(resultado)
+        alert("Ejercicio 7", mensaje)
+        
+
         
 if __name__ == "__main__":
     app = App()

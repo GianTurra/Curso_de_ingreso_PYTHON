@@ -28,7 +28,16 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        salida_prompt = prompt("Titulo" , "Escriba o Inserte")
+        alert("Ejercicio 2" , salida_prompt)
+        
+
+
+
+
+
+
+
         
         
     

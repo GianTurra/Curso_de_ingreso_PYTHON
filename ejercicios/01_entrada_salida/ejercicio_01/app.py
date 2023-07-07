@@ -28,6 +28,7 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
+        alert("Ejercicio 1" , "Esto no anda, funciona")
         print("Prueba de clase 1")
         
 
