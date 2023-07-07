@@ -48,13 +48,51 @@ class App(customtkinter.CTk):
         self.btn_total_iva.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_total_on_click(self):
-        pass
+        importe_a_txt = self.txt_importe_1.get()
+        importe_b_txt = self.txt_importe_2.get()
+        importe_c_txt = self.txt_importe_3.get()
+
+        importe_a_num = float (importe_a_txt)
+        importe_b_num = float (importe_b_txt)
+        importe_c_num = float (importe_c_txt)
+
+        suma_total = importe_a_num + importe_b_num + importe_c_num
+        mensaje = "La suma total es:{0}".format(suma_total)
+        alert("Ejercicio 1", mensaje)
+
+    
+
 
     def btn_promedio_on_click(self):
-        pass
+        importe_a_txt = self.txt_importe_1.get()
+        importe_b_txt = self.txt_importe_2.get()
+        importe_c_txt = self.txt_importe_3.get()
+
+        importe_a_num = float (importe_a_txt)
+        importe_b_num = float (importe_b_txt)
+        importe_c_num = float (importe_c_txt)
+
+        promedio = (importe_a_num + importe_b_num + importe_c_num) / 3 
+        mensaje = "El promedio es:{0}".format(promedio)
+        alert("Ejercicio 1", mensaje)
+
+
+
 
     def btn_total_iva_on_click(self):
-        pass      
+        importe_a_txt = self.txt_importe_1.get()
+        importe_b_txt = self.txt_importe_2.get()
+        importe_c_txt = self.txt_importe_3.get()
+
+        importe_a_num = float (importe_a_txt)
+        importe_b_num = float (importe_b_txt)
+        importe_c_num = float (importe_c_txt)
+
+        iva_total = (importe_a_num + importe_b_num + importe_c_num) * 1.21
+        mensaje = "Precio final con IVA:{0}".format(iva_total)
+        alert("Ejercicio 1", mensaje)   
+        
+
     
 if __name__ == "__main__":
     app = App()
