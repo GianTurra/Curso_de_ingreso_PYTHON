@@ -12,14 +12,14 @@ a la hora de realizar un alambrado permetral, se le solicita al usuario que ingr
 
     A. Informar los metros cuadrados del terreno y los metros lineales del perimetro
     B. Informar la cantidad de postes de quebracho Grueso de 2.4 mts (van cada 250 mts lineales y en las esquinas).
-    C. Informar la cantidad de postes de quebracho Fino de 2.2 mts (van cada 12 mts lineales, si en es lugar no se encuentra el poste grueso).
+    C. Informar la cantidad de postes de quebracho Fino de 2.2 mts (van cada 12 mts lineales, si en su lugar no se encuentra el poste grueso).
     D. Informar la cantidad de varillas (van cada 2 mts lineales).
     E. Informar la cantidad de alambre alta resistencia 17/15 considerando 7 hilos.
 
     EJ 36 MTS X 24 MTS 
     (G)Poste Quebracho Grueso de 2.4 mts
-    (V)Poste Quebracho Fino de 2.2 mts
-    (F)Varillas
+    (F)Poste Quebracho Fino de 2.2 mts
+    (V)Varillas
     
     G V V V V V F V V V V V F V V V V V G
     V                                   V
@@ -63,7 +63,69 @@ class App(customtkinter.CTk):
         self.btn_calcular.grid(row=3, pady=10, columnspan=2, sticky="nsew")
 
     def btn_calcular_on_click(self):
-        pass
+       # A. 
+        
+        largo_terreno = self.txt_largo.get()
+        largo_terreno_num = int(largo_terreno)
+        
+        ancho_terreno = self.txt_ancho.get()
+        ancho_terreno_num = int(ancho_terreno)
+
+        metros_cuadrados = (largo_terreno_num * ancho_terreno_num)
+
+        metros_lineales = (largo_terreno_num + ancho_terreno_num) * 2
+
+        mensaje_a= f"Metros Cuadrados: {metros_cuadrados}\nMetros Lineales: {metros_lineales}"
+       
+        alert("Metros Cuadrados del Terreno", mensaje_a)
+
+        # B.  
+
+        cantidad_quebracho_grueso = 4 + (metros_lineales // 250)
+
+        mensaje_b = f"Cantidad de postes gruesos: {cantidad_quebracho_grueso}"
+        
+        alert("Punto B", mensaje_b)
+
+
+
+        # C. 
+
+        cantidad_quebracho_fino = (metros_lineales // 12 - cantidad_quebracho_grueso)
+
+        mensaje_c = f"Cantidad de postes finos: {cantidad_quebracho_fino}"
+
+        alert("Punto C", mensaje_c)
+
+        # D.
+
+        varillas = (metros_lineales // 2 - cantidad_quebracho_grueso - cantidad_quebracho_fino)
+
+        mensaje_d = f"Cantidad de varillas: {varillas}"
+
+        alert("Punto D", mensaje_d)
+
+        # E.
+
+        alambre = (metros_lineales * 7)
+
+        mensaje_e = f"Cantidad Alambre: {alambre}"
+
+        alert("Punto E", mensaje_e)
+
+        
+
+
+
+       
+        
+        
+
+
+
+
+
+
 
 
 if __name__ == "__main__":
