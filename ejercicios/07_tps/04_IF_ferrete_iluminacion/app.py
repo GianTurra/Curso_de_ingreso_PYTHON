@@ -38,7 +38,161 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        cantidad = self.combobox_cantidad.get()
+        cantidad_num = int(cantidad)
+        importe = 800
+        marca = self.combobox_marca.get()
+        precio_final = 0
+        
+        # ELSE - IF
+
+        if(cantidad_num >= 6):
+            descuento = 0.5
+            precio_descuento = importe * cantidad_num * descuento 
+            mensaje = "Descuento del 50% \n El total a pagar con el descuento es: {0}".format(precio_descuento)
+        else:
+            if(cantidad_num == 5):
+                if(marca == "ArgentinaLuz"):
+                    descuento = 0.4
+                    precio_descuento = importe * cantidad_num * descuento
+                    mensaje = "Descuento del 40% \n El total a pagar con el descuento es: {0}".format(precio_descuento)
+                else:
+                    descuento = 0.3
+                    precio_descuento = importe * cantidad_num * descuento
+                    mensaje = "Descuento del 30% \n El total a pagar con el descuento es: {0}".format(precio_descuento)
+            else:        
+                if(cantidad_num == 4):
+                    if(marca == "ArgentinaLuz" or marca == "FelipeLamparas"):
+                        descuento = 0.25
+                        precio_descuento = importe * cantidad_num * descuento
+                        mensaje = "Descuento del 25% \n El total a pagar con el descuento es: {0}".format(precio_descuento)
+                    else:
+                        descuento = 0.20
+                        precio_descuento = importe * cantidad_num * descuento
+                        mensaje = "Descuento del 20% \n El total a pagar con el descuento es: {0}".format(precio_descuento)
+                else:
+                    if(cantidad_num == 3):
+                        if(marca == "ArgentinaLuz"):
+                            descuento = 0.15
+                            precio_descuento = importe * cantidad_num * descuento
+                            mensaje = "Descuento del 15% \n El total a pagar con el descuento es: {0}".format(precio_descuento)
+                        else:
+                            if(marca == "FelipeLamparas"):
+                                descuento = 0.10
+                                precio_descuento = importe * cantidad_num * descuento
+                                mensaje = "Descuento del 10% \n El total a pagar con el descuento es: {0}".format(precio_descuento)
+                            else:
+                                descuento = 0.05
+                                precio_descuento = importe * cantidad_num * descuento
+                                mensaje = "Descuento del 5% \n El total a pagar con el descuento es: {0}".format(precio_descuento)
+        
+        precio_descuento = importe * cantidad_num * descuento
+        descuento_adicional = 0.05
+        importe_final = precio_descuento - (precio_descuento * descuento_adicional)
+        
+        if(importe_final > 4000):
+            importe_final = precio_descuento - (precio_descuento * descuento_adicional)
+            mensaje = f"El total a pagar con el descuento es: {precio_descuento}\nImporte final con el descuento adicional: {importe_final:.2f}"
+        
+        alert("TP 4", mensaje)
+
+
+
+        # ELIF
+
+        if(cantidad_num >= 6):
+            descuento = 0.5 
+            precio_descuento = importe * cantidad_num * descuento
+            mensaje = f"Descuento del 50% \n El total a pagar con el descuento es: {precio_descuento}"
+        elif(cantidad_num == 5):
+            if(marca == "ArgentinaLuz"):
+                descuento = 0.4
+                precio_descuento = importe * cantidad_num * descuento
+                mensaje = f"Descuento del 40% \n El total a pagar con el descuento es: {precio_descuento}"
+            else: 
+                descuento = 0.3
+                precio_descuento = importe * cantidad_num * descuento 
+                mensaje = f"Descuento del 30% \n El total a pagar con el descuento es: {precio_descuento}"
+        elif(cantidad_num == 4):
+            if(marca == "ArgentinaLuz" or marca == "FelipeLamparas"):
+                descuento = 0.25 
+                precio_descuento = importe * cantidad_num * descuento
+                mensaje = f"Descuento del 25% \n El total a pagar con el descuento es: {precio_descuento}"   
+            else:
+                descuento = 0.2
+                precio_descuento = importe * cantidad_num * descuento 
+                mensaje = f"Descuento del 20% \n El total a pagar con el descuento es: {precio_descuento}"  
+        elif(cantidad_num == 3):
+            if(marca == "ArgentinaLuz"):
+                descuento = 0.15 
+                precio_descuento = importe * cantidad_num * descuento
+                mensaje = f"Descuento del 15% \n El total a pagar con el descuento es: {precio_descuento}"  
+            elif(marca == "FelipeLamparas"):
+                descuento = 0.10 
+                precio_descuento = importe * cantidad_num * descuento
+                mensaje = f"Descuento del 10% \n El total a pagar con el descuento es: {precio_descuento}"
+            else:
+                descuento = 0.05
+                precio_descuento = importe * cantidad_num * descuento
+                f"Descuento del 5% \n El total a pagar con el descuento es: {precio_descuento}"
+        
+        
+        precio_descuento = importe * cantidad_num * descuento
+        descuento_adicional = 0.05
+        importe_final = precio_descuento - (precio_descuento * descuento_adicional)
+        
+        if(importe_final > 4000):
+            importe_final = precio_descuento - (precio_descuento * descuento_adicional)
+            mensaje = f"El total a pagar con el descuento es: {precio_descuento}\nImporte final con el descuento adicional: {importe_final:.2f}"
+        
+        alert("TP 4", mensaje)
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+    
+     
+
+
+            
+
+
+
+
+            
+
+
+
+
         
     
 if __name__ == "__main__":
