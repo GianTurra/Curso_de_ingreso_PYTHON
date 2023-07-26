@@ -24,7 +24,15 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-        pass
+        
+        contador = 10
+
+        while contador >= 1:
+            mensaje = f"Interaccion numero: {contador}"
+            alert("EJERCICIO 2", mensaje)
+            contador -= 1
+            
+            
     
     
 if __name__ == "__main__":

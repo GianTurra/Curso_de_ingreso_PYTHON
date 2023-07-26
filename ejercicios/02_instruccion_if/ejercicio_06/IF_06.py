@@ -39,18 +39,22 @@ class App(customtkinter.CTk):
         edad_tex = self.txt_edad.get()
         edad_num = int(edad_tex)
         
+        
         if(edad_num >= 10):
             if(edad_num < 13):
-                alert("Edad", "Pre Adolescente")
+                mensaje = "Pre Adolescente"
             else:
                 if(edad_num >= 13):
                     if(edad_num <=17):
-                        alert("Edad", "Adolescente")
+                        mensaje = "Adolescente"
                     else:
                         if(edad_num >=18):
-                            alert("Edad", "Mayor")
+                            mensaje = "Mayor"
         else:
-            alert("Edad", "Menor")
+            mensaje = "Menor"
+        
+        alert("Edad", mensaje)
+
             
 
                             

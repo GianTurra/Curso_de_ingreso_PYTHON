@@ -52,8 +52,80 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
-            
+        estacion = self.combobox_estaciones.get() 
+        destino = self.combobox_destino.get()
+        precio_estadia = 15000
+        aumento = 0
+        descuento = 0
+        mensaje = ""
+
+        match estacion:
+            case "Invierno":
+                match destino:
+                    case "Bariloche":
+                        aumento = 0.20
+                        mensaje = f"El total a pagar con el aumento es: {aumento_aplicado}"
+                    case "Mar del plata":
+                        descuento = 0.20
+                        mensaje = f"El total a pagar con el descuento es: {descuento_aplicado}"
+                    case _:
+                        descuento = 0.10
+                        mensaje = f"El total a pagar con el descuento es: {descuento_aplicado}"
+            case "Verano":
+                match destino:
+                    case "Bariloche":
+                        descuento = 0.20
+                        mensaje = f"El total a pagar con el descuento es: {descuento_aplicado}"
+                    case "Mar del plata":
+                        aumento = 0.20
+                        mensaje = f"El total a pagar con el aumento es: {aumento_aplicado}"
+                    case _:
+                        aumento = 0.10
+                        mensaje = f"El total a pagar con el aumento es: {aumento_aplicado}"
+            case _:
+                match destino:
+                    case "Cordoba":
+                        mensaje = f"El total a pagar es: {precio_estadia}"
+                    case _:
+                        aumento = 0.10
+                        mensaje = f"El total a pagar con el aumento es: {aumento_aplicado}"
+    
+        aumento_aplicado = precio_estadia + (precio_estadia * aumento)
+        descuento_aplicado = precio_estadia - (precio_estadia * descuento)
+
+        
+        
+        
+        
+
+                       
+
+        
+
+
+        
+        
+
+        alert("EJ 9", mensaje)
+
+
+
+
+
+
+
+        
+
+
+
+        
+
+                             
+
+                              
+               
+                
+                            
     
 if __name__ == "__main__":
     app = App()
